@@ -1,0 +1,15 @@
+# VisionMap - .dockerignore
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.env
+*.md
+.vscode
+.idea
+pgdata/
+Dockerfile
+docker-compose.yml
+.dockerignore
+test.png

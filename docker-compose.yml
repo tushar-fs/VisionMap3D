@@ -1,0 +1,41 @@
+# VisionMap - docker-compose
+# Runs PostgreSQL (with pgvector) + the FastAPI inference API
+
+services:
+  db:
+    image: pgvector/pgvector:pg16  # Postgres 16 with pgvector pre-installed
+    container_name: visionmap-db
+    restart: unless-stopped
+    ports:
+      - "5433:5432"  # Using 5433 to avoid conflicts with local Postgres
+    environment:
+      POSTGRES_USER: visionmap
+      POSTGRES_PASSWORD: visionmap
+      POSTGRES_DB: visionmap
+    volumes:
+      # init.sql runs automatically on first container creation
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U visionmap -d visionmap"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: visionmap-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Within Docker's network, services reference each other by name, not localhost
+      DATABASE_URL: "postgresql://visionmap:visionmap@db:5432/visionmap"
+    depends_on:
+      db:
+        condition: service_healthy  # Wait for Postgres to be ready
+
+volumes:
+  pgdata:
