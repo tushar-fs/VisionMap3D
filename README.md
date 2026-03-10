@@ -38,6 +38,18 @@ API at `http://localhost:8000` · Docs at `http://localhost:8000/docs`
 
 ## Demo
 
+### Screenshots
+
+| Ingest (Golden Gate) | Ingest (SF Tower) | Localize |
+|---|---|---|
+| ![ingest](demo/ingest-golden-gate-img.png) | ![ingest-sf](demo/ingest-sf-tower-img.png) | ![localize](demo/localize-golden-gate-response.png) |
+
+### Reference Images Used
+
+| Golden Gate | SF Tower |
+|---|---|
+| ![golden-gate](demo/golden-gate.png) | ![sf-tower](demo/sf-tower.png) |
+
 ### Ingest — Store a geolocated image
 
 **`POST /ingest`** (form-data)
@@ -96,15 +108,3 @@ API at `http://localhost:8000` · Docs at `http://localhost:8000/docs`
   }
 }
 ```
-
-### Screenshots
-
-| Ingest (Golden Gate) | Ingest (SF Tower) | Localize |
-|---|---|---|
-| ![ingest](demo/ingest-golden-gate-img.png) | ![ingest-sf](demo/ingest-sf-tower-img.png) | ![localize](demo/localize-golden-gate-response.png) |
-
-### Reference Images Used
-
-| Golden Gate | SF Tower |
-|---|---|
-| ![golden-gate](demo/golden-gate.png) | ![sf-tower](demo/sf-tower.png) |
