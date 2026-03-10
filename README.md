@@ -99,9 +99,9 @@ API at `http://localhost:8000` · Docs at `http://localhost:8000/docs`
 
 ### Screenshots
 
-| Ingest | Localize | Database |
+| Ingest (Golden Gate) | Ingest (SF Tower) | Localize |
 |---|---|---|
-| ![ingest](demo/Screenshot%202026-03-09%20at%206.22.10%20pm.png) | ![localize](demo/Screenshot%202026-03-09%20at%206.24.53%20pm.png) | ![db](demo/Screenshot%202026-03-09%20at%206.29.57%20pm.png) |
+| ![ingest](demo/ingest-golden-gate-img.png) | ![ingest-sf](demo/ingest-sf-tower-img.png) | ![localize](demo/localize-golden-gate-response.png) |
 
 ### Reference Images Used
 
